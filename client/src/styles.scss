@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.wrapper{
+  display: flex;
+  margin: 12px;
+}
+.col-6{
+  width: 50%;
+}
+
+
+//for ng zorro table
+.wrapper-table .ant-table-tbody>tr>td, .ant-table-thead>tr>th {
+  padding: 4px 16px!important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+//for ng zorro table
+
+
+@media (max-width: 767px) {
+  .col-6{
+    width: 100%;
+  }
+}

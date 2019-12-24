@@ -1,0 +1,17 @@
+
+ {
+
+   "/user/*": {
+     "target": "https://call-center-demo1.herokuapp.com",
+     "secure": false,
+     "logLevel": "debug",
+     "changeOrigin": true
+   },
+   "/uploads/*": {
+     "target": "https://call-center-demo1.herokuapp.com",
+     "secure": false,
+     "logLevel": "debug",
+     "changeOrigin": true
+   }
+ }
+

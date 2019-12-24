@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <form [formGroup]="validateForm" class="register-form" (ngSubmit)="submitForm()">
+    <input type="text" formControlName="email" placeholder="Email">
+    <input type="password" formControlName="password" placeholder="Password" />
+    <button [disabled]="validateForm.invalid">Register</button>
+  </form>
+</div>

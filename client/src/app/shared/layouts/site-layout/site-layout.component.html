@@ -1,0 +1,90 @@
+<div class="body sidebar-is-reduced" [ngClass]="{'sidebar-is-expanded': isOpened}">
+  <header class="l-header">
+    <div class="l-header__inner clearfix">
+      <div class="c-header-icon js-hamburger" (click)="hamburgerToggle()">
+        <div class="hamburger-toggle" [ngClass]="{'is-opened': isOpened}"><span class="bar-top"></span><span class="bar-mid"></span><span class="bar-bot"></span></div>
+      </div>
+     <div class="selectProject" *ngIf="position == 'agent' ? true : false">
+       <nz-select nzShowSearch nzAllowClear nzPlaceHolder="SELECT PROJECT" [(ngModel)]="item" (ngModelChange)="onChangeProject($event)">
+         <nz-option nzCustomContent nzLabel="Create project" nzValue="Create project"  *ngIf="position == 'owner' ? true : false">   <button nz-button nzType="primary" (click)="createProject()">Create project</button></nz-option>
+         <nz-option nzCustomContent *ngFor="let project of projects" nzLabel="{{project.name}}" nzValue="{{project['_id']}}"> {{project.name}}</nz-option>
+         </nz-select>
+     </div>
+    </div>
+  </header>
+  <div class="l-sidebar">
+    <div class="logo">
+      <div class="logo__txt" [ngClass]="{'is-close': !isOpened}">Logo</div>
+    </div>
+    <div class="l-sidebar-flex">
+      <div class="l-sidebar__content">
+        <nav class="c-menu js-menu">
+          <ul class="u-list">
+            <li class="userName">
+              <p>{{currentUser}}</p>
+            </li>
+            <li class="c-menu__item" routerLink="/overview" routerLinkActive="is-active" *ngIf="position == 'owner' || position == 'manager' ? true : false">
+              <div class="c-menu__item__inner">
+                <i class="fa fa-plus-square navIcons" style="font-size:48px;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+                <div class="c-menu-item__title"><span>Overview</span></div>
+              </div>
+            </li>
+            <li class="c-menu__item" routerLink="/create-number-list" routerLinkActive="is-active"  *ngIf="position == 'owner' ? true : false">
+              <div class="c-menu__item__inner">
+                <i class="fa fa-plus-square navIcons" style="font-size:48px;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+                <div class="c-menu-item__title"><span>Create Number List</span></div>
+              </div>
+            </li>
+            <li class="c-menu__item" routerLink="/call" routerLinkActive="is-active"  *ngIf="position == 'agent' || position == 'manager' ? true : false">
+              <div class="c-menu__item__inner">
+                <i class="fa fa-plus-square navIcons" style="font-size:48px;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+                <div class="c-menu-item__title"><span>Call</span></div>
+              </div>
+            </li>
+            <li class="c-menu__item" routerLink="/history" routerLinkActive="is-active"  *ngIf="position == 'agent' || position == 'owner'  ? true : false">
+              <div class="c-menu__item__inner">
+                <i class="fa fa-map-marker navIcons" style="font-size:32px!important;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+                <div class="c-menu-item__title"><span>History</span></div>
+              </div>
+            </li>
+            <li class="c-menu__item" routerLink="/life-calls" routerLinkActive="is-active" *ngIf="position == 'owner' || position == 'manager' ? true : false">
+              <div class="c-menu__item__inner">
+                <i class="fa fa-search navIcons" style="font-size:48px;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+                <div class="c-menu-item__title"><span>Calls</span></div>
+              </div>
+            </li>
+            <li class="c-menu__item" routerLink="/members" routerLinkActive="is-active" *ngIf="position == 'owner' || position == 'manager' ? true : false">
+              <div class="c-menu__item__inner">
+                <i class="fa fa-search navIcons" style="font-size:48px;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+                <div class="c-menu-item__title"><span>Members</span></div>
+              </div>
+            </li>
+            <li class="c-menu__item" routerLink="/profile" routerLinkActive="is-active" *ngIf="position == 'owner' || position == 'manager' || position == 'agent' ? true : false">
+              <div class="c-menu__item__inner">
+                <i class="fa fa-search navIcons" style="font-size:48px;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+                <div class="c-menu-item__title"><span>Profile</span></div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-icons-group">
+        <div class="logout" (click)="logout($event)">
+          <div class="message-logout">
+            Ելք
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="l-main" [ngClass]="{'is-open-content': isOpened}">
+  <div class="content-wrapper content-wrapper--with-bg">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+
+
+

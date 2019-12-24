@@ -1,0 +1,47 @@
+
+<div class="wrapper">
+
+<div *ngIf="ticket">
+          <nz-tag [nzColor]="'magenta'">{{ticket['_id']}}</nz-tag>
+          <nz-tag [nzColor]="'red'">{{ticket.status}}</nz-tag>
+          <nz-tag [nzColor]="'volcano'">{{ticket.kvkNumber}}</nz-tag>
+          <nz-tag [nzColor]="'orange'">{{ticket.companyName}}</nz-tag>
+          <nz-tag [nzColor]="'gold'">{{ticket.location}}</nz-tag>
+          <nz-tag [nzColor]="'lime'">{{ticket.houseNumber1}}</nz-tag>
+          <nz-tag [nzColor]="'green'">{{ticket.postalCode}}</nz-tag>
+          <nz-tag [nzColor]="'cyan'">{{ticket.residence}}</nz-tag>
+          <nz-tag [nzColor]="'blue'">{{ticket.phoneNumber}}</nz-tag>
+          <nz-tag [nzColor]="'geekblue'">{{ticket.bankAccount}}</nz-tag>
+          <nz-tag [nzColor]="'purple'">{{ticket.sex}}</nz-tag>
+            <nz-tag [nzColor]="'red'">{{ticket.initials}}</nz-tag>
+          <nz-tag [nzColor]="'volcano'">{{ticket.email}}</nz-tag>
+          <nz-tag [nzColor]="'orange'">{{ticket.mobilePhone}}</nz-tag>
+          <nz-tag [nzColor]="'gold'">{{ticket.currentSupplier}}</nz-tag>
+          <nz-tag [nzColor]="'lime'">{{ticket.houseNumber1}}</nz-tag>
+          <nz-tag [nzColor]="'green'">{{ticket.invoiceHouseNumber1}}</nz-tag>
+          <nz-tag [nzColor]="'cyan'">{{ticket.invoiceHouseNumber2}}</nz-tag>
+          <nz-tag [nzColor]="'blue'">{{ticket.invoicePostalCode}}</nz-tag>
+          <nz-tag [nzColor]="'geekblue'">{{ticket.invoiceLocation}}</nz-tag>
+          <nz-tag [nzColor]="'purple'">{{ticket.listId}}</nz-tag>
+          <nz-tag [nzColor]="'purple'">{{ticket.companyId}}</nz-tag>
+          <nz-tag [nzColor]="'purple'">{{ticket.createdAt}}</nz-tag>
+ </div>
+      <div>
+        <button nz-button nzType="primary" (click)="nextCall()">NEXT CALL</button>
+        <button nz-button nzType="primary">START Call</button>
+      </div>
+      <div>
+        <button nz-button nzType="danger">END CALL</button>
+        <button nz-button nzType="danger" nzGhost>START RECORD</button>
+        <button nz-button nzType="danger" nzGhost>END RECORD</button>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+

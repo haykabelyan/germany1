@@ -1,0 +1,57 @@
+<div class="body sidebar-is-reduced" [ngClass]="{'sidebar-is-expanded': isOpened}">
+  <header class="l-header">
+    <div class="l-header__inner clearfix">
+      <div class="c-header-icon js-hamburger" (click)="hamburgerToggle()">
+        <div class="hamburger-toggle" [ngClass]="{'is-opened': isOpened}"><span class="bar-top"></span><span class="bar-mid"></span><span class="bar-bot"></span></div>
+      </div>
+    </div>
+  </header>
+  <div class="l-sidebar">
+    <div class="logo">
+      <div class="logo__txt" [ngClass]="{'is-close': !isOpened}">Logo</div>
+    </div>
+    <div class="l-sidebar-flex">
+    <div class="l-sidebar__content">
+      <nav class="c-menu js-menu">
+        <ul class="u-list">
+          <li class="userName">
+            <p>{{currentUser}}</p>
+          </li>
+          <li class="c-menu__item" [routerLink]="['/overview']" routerLinkActive="is-active">
+            <div class="c-menu__item__inner">
+              <i class="fa fa-plus-square navIcons" style="font-size:48px;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+              <div class="c-menu-item__title"><span>Overview</span></div>
+            </div>
+          </li>
+          <li class="c-menu__item" [routerLink]="['/Link1']" routerLinkActive="is-active">
+            <div class="c-menu__item__inner">
+              <i class="fa fa-map-marker navIcons" style="font-size:32px!important;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+              <div class="c-menu-item__title"><span>Route2</span></div>
+            </div>
+          </li>
+          <li class="c-menu__item" [routerLink]="['Link2']" routerLinkActive="is-active">
+            <div class="c-menu__item__inner">
+              <i class="fa fa-search navIcons" style="font-size:48px;" [ngClass]="{'navIconsActive' : navIconsActivated}"></i>
+              <div class="c-menu-item__title"><span>Route3</span></div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-icons-group">
+      <div class="logout" (click)="logout($event)">
+        <div class="message-logout">
+          Ելք
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<main class="l-main" [ngClass]="{'is-open-content': isOpened}">
+  <div class="content-wrapper content-wrapper--with-bg">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+

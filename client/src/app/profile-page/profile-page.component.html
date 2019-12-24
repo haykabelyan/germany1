@@ -1,0 +1,67 @@
+<div class="wrapper">
+
+
+  <div class="left">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="The input is not valid firstName!">
+          <input nz-input formControlName="firstName" id="firstName" placeholder="firstName" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="The input is not valid LastName!">
+          <input nz-input formControlName="lastName" id="lastName"  placeholder="LastName" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your password!">
+          <input nz-input type="password" id="password" formControlName="password" (ngModelChange)="updateConfirmValidator()" placeholder="Password"/>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="errorTpl">
+          <input nz-input type="password" formControlName="checkPassword" id="checkPassword" placeholder="Confirm Password"/>
+          <ng-template #errorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">
+              Please confirm your password!
+            </ng-container>
+            <ng-container *ngIf="control.hasError('confirm')">
+              Two passwords that you enter is inconsistent!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="The input is not valid TwilioAuthToken!">
+          <nz-input-group [nzSuffix]="suffixTemplate">
+          <input nz-input  [type]="authTokenVisible ? 'text' : 'password'" formControlName="twilioAuthToken" id="twilioAuthToken" placeholder="TwilioAuthToken" />
+          </nz-input-group>
+          <ng-template #suffixTemplate>
+          <i nz-icon [nzType]="authTokenVisible ? 'eye-invisible' : 'eye'" (click)="authTokenVisible = !authTokenVisible"></i>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="The input is not valid TwilioAccountSid!">
+          <input nz-input formControlName="twilioAccountSid" id="twilioAccountSid" placeholder="TwilioAccountSid" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control>
+          <button nz-button nzType="primary">Save</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+  <div class="right">
+
+  </div>
+
+</div>

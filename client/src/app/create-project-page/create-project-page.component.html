@@ -1,0 +1,59 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" class="wrapper">
+  <div class="col-6">
+    <h1>Create New Project</h1>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="The input is not valid Name!">
+        <input nz-input formControlName="name" id="name" placeholder="Project Name"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="The input is not valid TicketListId!">
+        <nz-select
+          id="ticketListId"
+          formControlName="ticketListId"
+          nzPlaceHolder="Please select your VoipProvider"
+          (ngModelChange)="changeTicketListId($event)"
+          nzAllowClear
+        >
+          <nz-option nzValue="ID1" nzLabel="ID1"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="The input is not valid Description!">
+        <input nz-input formControlName="description" id="description" placeholder="Project Description"/>
+      </nz-form-control>
+    </nz-form-item>
+     <nz-form-item>
+      <nz-form-control nzErrorTip="Please select your VoipProvider!">
+        <nz-select
+          id="voipProvider"
+          formControlName="voipProvider"
+          nzPlaceHolder="Please select your VoipProvider"
+          (ngModelChange)="changeVoipProvider($event)"
+          nzAllowClear
+        >
+          <nz-option nzValue="TWILIO" nzLabel="TWILIO"></nz-option>
+      </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="The input is not valid UserIds!" formArrayName="userIds">
+        <input nz-input formControlName="{{0}}" id="itemFromUserIds" placeholder="Project user Id"/>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="primary" [disabled]="validateForm.invalid">Create</button>
+      </nz-form-control>
+    </nz-form-item>
+  </div>
+
+  <div class="col-6">
+
+  </div>
+
+
+</form>
+

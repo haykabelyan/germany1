@@ -1,0 +1,29 @@
+
+
+<button nz-button nzType="primary" class="addNewAgent">Add New Agent</button>
+
+
+<div class="wrapper">
+  <nz-table #fixedTable [nzData]="listOfData" [nzScroll]="{ x: '1150px', y: '240px' }">
+    <thead>
+    <tr>
+      <th nzWidth="100px">Column 1</th>
+      <th nzWidth="100px">Column 2</th>
+      <th nzWidth="100px">Column 3</th>
+      <th nzWidth="100px">Column 4</th>
+      <th nzWidth="100px">Update</th>
+      <th nzWidth="100px">Delete 8</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of fixedTable.data">
+      <td>{{ data.address }}</td>
+      <td>{{ data.address }}</td>
+      <td>{{ data.address }}</td>
+      <td>{{ data.address }}</td>
+      <td><button class="btn-update">update</button></td>
+      <td><button class="btn-delete">delete</button></td>
+    </tr>
+    </tbody>
+  </nz-table>
+</div>

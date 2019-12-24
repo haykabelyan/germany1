@@ -1,0 +1,28 @@
+
+.addNewAgent{
+  margin: 20px;
+}
+
+
+.btn-update{
+  background-color: green;
+  border: 1px solid gray;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn-delete {
+  background-color: red;
+  border: 1px solid gray;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+
+.btn-update:hover, .btn-delete:hover{
+  box-shadow: 0px 0px 10px #333;
+}

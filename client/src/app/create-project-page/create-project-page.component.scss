@@ -1,0 +1,36 @@
+[nz-form] {
+  margin-top: 30px;
+}
+[nz-form] > div{
+  text-align: center;
+}
+.profileImage {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #333;
+}
+.upload-btn{
+  width: 104px;
+  margin: 20px auto;
+}
+.buttonChoose{
+  cursor: pointer;
+  background-color: #007ad9;
+  box-shadow: 1px 1px 2px #333;
+  border-radius: 5px;
+  border: 2.5px solid transparent;
+  font-size: 12px !important;
+  color: white;
+  width: 104px;
+  margin: 20px auto;
+  top: -55px;
+  padding: 6px 24px;
+}
+
+
+@media (max-width: 767px) {
+  [nz-form] {
+    flex-direction: column;
+  }
+}

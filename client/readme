@@ -1,0 +1,56 @@
+
+
+
+POST
+​/user​/auth​/login
+GET
+​/user​/availablePhoneNumbers
+POST
+​/user​/createPhoneNumber
+GET
+​/user​/getPhoneNumbers -  - compamy phone numbers
+POST
+​/user - create user
+GET
+​/user - users list from company
+PUT
+​/user - - change
+GET
+​/user​/current - - yst tokeni talis e current usery /companyowner: true, false
+
+
+//------------------------------------------------------------------------
+
+GET
+​/project​/byUser - get all projecs
+
+GET
+​/project​/set​/{id} - get one project
+
+POST
+​/project - create project - owner
+
+PUT
+​/project - change project
+
+DELETE
+​/project
+
+GET
+​/project - get current pjecert info
+
+//------------------------------------------------------------------------
+
+GET
+​/ticket​/nextScheduled​/{listId} - listId-y verjcum em      ​GET /project
+
+
+GET
+​/ticket​/list​/{id} - listId
+
+GET
+​/ticket​/{id} - tecket id ov get e anum ticket info
+
+
+
+
